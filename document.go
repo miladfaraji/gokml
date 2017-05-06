@@ -16,9 +16,9 @@ type Document struct {
 	Address     string   `xml:"address,omitempty"`
 	PhoneNumber string   `xml:"phoneNumber,omitempty"`
 	Description string   `xml:"description,omitempty"`
-	Placemarks  []Placemark
-	Folders     []Folder
-	DocStyle    []Style
+	Placemarks  []Placemark `xml:"Placemark"`
+	Folders     []Folder `xml:"Folder"`
+	DocStyle    []Style  `xml:"Style"`
 }
 
 // NewDocument() creates a new document

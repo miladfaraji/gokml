@@ -13,6 +13,7 @@ type Style struct {
 	Id      string   `xml:"id,attr,omitempty"`
 	Icon    IconStyle
 	Label   LabelStyle
+	Line    LineStyle
 }
 
 // IconStyle
@@ -50,4 +51,9 @@ func NewIconStyle(scale, heading, href string) IconStyle {
 func NewLabelStyle(scale string) LabelStyle {
 	ls := LabelStyle{Scale: scale}
 	return ls
+}
+type LineStyle struct {
+	XMLName xml.Name `xml:"LineStyle"`
+	Color   string   `xml:"color,omitempty"`
+	Width  string `xml:"width"`
 }

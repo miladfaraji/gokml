@@ -8,14 +8,25 @@ import (
 /*
  * Placemark
  */
+
 type Placemark struct {
 	XMLName     xml.Name `xml:"Placemark"`
 	Id          string   `xml:"id,attr,omitempty"`
 	Name        string   `xml:"name,omitempty"`
 	Description string   `xml:"description,omitempty"`
 	StyleUrl    string   `xml:"styleUrl,omitempty"`
-	Coordinates string   `xml:"Point>coordinates"`
-	Extended    ExtendedData
+	Coordinates string   `xml:"Point>coordinates,omitempty"`
+	Extended    ExtendedData `xml:"ExtendedData,omitempty"`
+	Line        Line `xml:"LineString,omitempty"`
+}
+type Line struct {
+	XMLName     xml.Name `xml:"LineString"`
+	Id          string   `xml:"id,attr,omitempty"`
+	Name        string   `xml:"name,omitempty"`
+	Description string   `xml:"description,omitempty"`
+	StyleUrl    string   `xml:"styleUrl,omitempty"`
+	Coordinates string   `xml:"coordinates"`
+	Extended    ExtendedData `xml:"ExtendedData,omitempty"`
 }
 
 // NewPlacemark() creates a new placemark.  All parameters are strings.
